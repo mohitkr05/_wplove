@@ -11,4 +11,4 @@
 # KDE directory preferences
 .directory
 
-/lib/admin/
+lib/admin/
