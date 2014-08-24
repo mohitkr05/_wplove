@@ -80,7 +80,7 @@ query_posts( array ( 'post_type' => 'product' ,  'posts_per_page' => 6) );
                     <h4 class="portfolio-post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
                      <p><?php the_excerpt(); ?>
 
-                      <a href="<?php the_permalink(); ?>" rel="bookmark" class="btn btn-primary">More Details <i class="fa fa-chevron-circle-right"></i> </a> <?php if ( get_post_meta( get_the_ID(), 'demo_link', true ) ) : ?> <a href="<?php get_post_meta( get_the_ID(), 'demo_link', true ); ?>" rel="bookmark" class="btn btn-danger">Theme Preview <i class="fa fa-eye"></i></a><?php endif; ?> </p>
+                      <a href="<?php the_permalink(); ?>" rel="bookmark" class="btn btn-primary">More Details <i class="fa fa-chevron-circle-right"></i> </a> <?php if ( get_post_meta( get_the_ID(), 'demo_link', true ) ) : ?> <a href="<?php echo get_post_meta( get_the_ID(), 'demo_link', true ); ?>" rel="bookmark" class="btn btn-danger">Theme Preview <i class="fa fa-eye"></i></a><?php endif; ?> </p>
                 </div>
             </div>
         </div><!--portfolio item -->
