@@ -1,0 +1,149 @@
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $font_heading;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+body {
+	
+	font-family: $font_text ;
+}
+
+h1 {
+    @extend .beta;
+	@extend %hN;
+	line-height: 50px; margin-bottom: 20px;
+}
+
+h2 {
+    @extend .gamma;
+	@extend %hN;
+	line-height: 40px; margin-bottom: 10px; 
+}
+
+h3 {
+    @extend .delta;
+	@extend %hN;
+	line-height: 34px; margin-bottom: 8px; 
+}
+
+h4 {
+    @extend .epsilon;
+	@extend %hN;
+	line-height: 30px; margin-bottom: 4px;
+}
+
+h5 {
+    @extend .zeta;
+	@extend %hN;
+	line-height: 24px; 
+}
+
+h6 {
+    @extend .zeta;
+	@extend %hN;
+	line-height: 21px;
+}
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+    // http: //meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+	@include css-hyphens(none);
+}
+
+abbr {
+    @include smallcaps($small-caps-color, $small-caps-weight);
+	&:hover {cursor:help;}
+}
+
+
+
+//Combats our sibling paragraphs syling and indentation
+// As not to ruin our beautiful drop caps.
+p + .drop-cap {
+    text-indent: 0;
+    margin-top: 0;
+}
+
+.drop-cap {
+    @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
+}
+
+small {
+    font-size: $small-print-size;
+}
+
+pre code {
+    @extend %normal-wrap;
+	@include white-space(pre-wrap);
+}
+
+pre {
+    @include white-space(pre);
+}
+
+code {
+    @include white-space(pre);
+	font-family: monospace;
+}
+
+@mixin cite-style($display, $text-align, $font-size) {
+    display: $display;
+	font-size: $font-size;
+	text-align: $text-align;
+}
+
+%cite {
+    @include cite-style($cite-display, $cite-text-align, $cite-font-size);
+}
+
+
+p {
+	
+	font-family: $font_text ;
+	
+}
+em { font-style: italic; }
+strong { font-weight: bold; }
+small { font-size: 80%; }
+h3.subtitle{
+    font-weight: 800;
+    font-size: 18px;
+    color:#b3b3b3;
+    font-style: italic;
+}
+h4.heading-mini{
+    font-weight: 800;
+    font-size: 18px;
+    color:#000;
+    margin-bottom: 30px;
+}
+h3.heading-sec{
+    font-weight: 800;
+    display: block;
+    margin-bottom: 25px;
+    color:#000;
+    font-size: 23px;
+}
+h3.heading-sec:first-letter{
+    border-bottom: 5px solid $primary;
+}
+
+.header-main{
+    width:100%;
+}

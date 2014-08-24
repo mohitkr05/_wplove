@@ -1,0 +1,14 @@
+# Created by http://www.gitignore.io
+
+### Sass ###
+.sass-cache
+
+# Created by http://www.gitignore.io
+
+### Linux ###
+*~
+
+# KDE directory preferences
+.directory
+
+/lib/admin/

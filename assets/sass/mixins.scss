@@ -1,0 +1,217 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+@mixin line-height($heightValue: 12 ){
+	line-height: $heightValue + px; //fallback for old browsers
+	line-height: (0.125 * $heightValue) + rem;
+}
+
+
+@mixin breakpoint($break) {
+	@if $break == large {
+			@media (max-width: 1420px) { @content; }
+		}
+	@else if $break == medium {
+			@media (max-width: 1200px) { @content; }
+	}
+	@else if $break == small {
+			@media (max-width: 760px) { @content; }
+	} @else {
+			@media ($break) { @content; }
+	}
+}
+
+
+@mixin blockquote($citation-flourish) {
+	p {
+		&:last-of-type {
+			margin-bottom: -#{$line-height/2}em;
+		}
+	}
+	+ figcaption {
+		@extend %cite;
+		&:before {
+			content: $citation-flourish;
+		}
+	}
+}
+
+
+
+@mixin dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg) {
+	&:first-letter {
+		float: $dropcap-float-position;
+		margin: $dropcap-margin;
+		padding: $dropcap-padding;
+		font-size: $dropcap-font-size;
+		font-family: $dropcap-font-family;
+		line-height: $dropcap-line-height;
+		text-indent: $dropcap-txt-indent;
+		background: $dropcap-bg;
+		color: $dropcap-color;
+	}
+}
+
+@mixin white-space($wrap-space) {
+	@if $wrap-space == 'pre-wrap' {
+		white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
+		white-space: $wrap-space;       // current browsers
+	} @else {
+		white-space: $wrap-space;
+	}
+}
+
+@mixin opacity($opacity:0.75) {
+filter: alpha(opacity=( $opacity * 100 ) );
+-moz-opacity:$opacity;
+-khtml-opacity: $opacity;
+opacity: $opacity;
+}
+@mixin box_shadow($shadow_x:3px, $shadow_y:3px, $shadow_rad:3px, $shadow_in:3px, $shadow_color:#888) {
+box-shadow:$shadow_x $shadow_y $shadow_rad $shadow_in $shadow_color;
+-webkit-box-shadow:$shadow_x $shadow_y $shadow_rad $shadow_in $shadow_color;
+-moz-box-shadow:$shadow_x $shadow_y $shadow_rad $shadow_in $shadow_color;
+}
+@mixin inset_box_shadow($shadow_x:3px, $shadow_y:3px, $shadow_rad:3px, $shadow_in:3px, $shadow_color:#888) {
+box-shadow:inset $shadow_x $shadow_y $shadow_rad $shadow_in $shadow_color;
+-webkit-box-shadow:inset $shadow_x $shadow_y $shadow_rad $shadow_in $shadow_color;
+-moz-box-shadow:inset $shadow_x $shadow_y $shadow_rad $shadow_in $shadow_color;
+}
+@mixin text_shadow($shadow_x:3px, $shadow_y:3px, $shadow_rad:3px, $shadow_color:#fff) {
+text-shadow:$shadow_x $shadow_y $shadow_rad $shadow_color;
+}
+@mixin vertical_gradient($from: #000, $to: #FFF) {
+background: $from;
+background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+background: -webkit-linear-gradient($from, $to);
+background: -moz-linear-gradient(center top, $from 0%, $to 100%);
+background: -moz-gradient(center top, $from 0%, $to 100%);
+}
+@mixin transition($selector:all, $animation:ease-in-out, $duration:.2s) {
+-webkit-transition:$selector $animation $duration;
+-moz-transition:$selector $animation $duration;
+-o-transition:$selector $animation $duration;
+transition:$selector $animation $duration;
+}
+@mixin scale($ratio:1.5){
+-webkit-transform:scale($ratio);
+-moz-transform:scale($ratio);
+-ms-transform:scale($ratio);
+-o-transform:scale($ratio);
+transform:scale($ratio);
+}
+@mixin borderbox() {
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box; /* Firefox, other Gecko */
+box-sizing: border-box; /* Opera/IE 8+ */
+}
+.clear { clear: both; }
+.nobr { white-space: nowrap; }
+@mixin darkorlighttextshadow( $a, $opacity: 0.8 ) {
+@if lightness( $a ) >= 65% {
+@include text_shadow( 0, -1px, 0, rgba(0, 0, 0, $opacity) );
+} @else {
+@include text_shadow( 0, 1px, 0, rgba(255, 255, 255, $opacity) );
+}
+}
+

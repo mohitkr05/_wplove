@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata|Josefin+Sans|PT+Sans+Narrow);
+/*Bootstrap Overrides*/
+
+$brand-primary:         #50000D !default;
+$brand-success:         #A13646 !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+$topbarbg    : 			#fdfdfd;
+
+
+/* Color Triads 
+*** Primary color:
+
+   shade 0 = #A13646 = rgb(161, 54, 70) = rgba(161, 54, 70,1)
+   shade 1 = #F1F0F0 = rgb(241,240,240) = rgba(241,240,240,1)
+   shade 2 = #C98690 = rgb(201,134,144) = rgba(201,134,144,1)
+   shade 3 = #780013 = rgb(120,  0, 19) = rgba(120,  0, 19,1)
+   shade 4 = #50000D = rgb( 80,  0, 13) = rgba( 80,  0, 13,1)
+*/
+
+
+$primary 		:	#50000D 	;   /*Used in nav menu */
+$secondary		:	#A13646	;
+$tertiary		:	#780013	;  /* Used in Footer/Topbar */
+$text			:	#000	;  /* Used in Footer/Topbar */
+$text_alternate :  #fff;
+
+$nav_bg      : 			#ED1C24;
+$nav_hover   : 			#ED1C24;
+
+$small-caps-color: gray !default;
+$small-caps-weight: 600 !default;
+
+$dropcap-float-position: left !default;
+$dropcap-font-size: 4em !default;
+$dropcap-font-family: inherit !default;
+$dropcap-txt-indent: 0 !default;
+$dropcap-margin: inherit !default;
+$dropcap-padding: inherit !default;
+$dropcap-color: inherit !default;
+$dropcap-line-height: 1 !default;
+$dropcap-bg: transparent !default;
+$small-print-size: 65% !default;
+
+
+$cite-display: block !default;
+$cite-text-align: right !default;
+$cite-font-size: inherit !default;
+
+$pull-quote-fontsize: 4em !default;
+$pull-quote-opacity: 0.5 !default;
+$pull-quote-color: #dc976e !default;
+
+
+
+$primarytext: $text;	/* Text on primary colour bg */
+$secondary:  $secondary;	/* Secondary buttons */
+$secondarytext:	$text_alternate;	/* Text on secondary colour bg */
+$highlight: adjust-hue( $primary, 150 ); /* Prices, In stock labels, sales flash */
+$highlightext:	desaturate(lighten($highlight,50%),18%);	/* Text on highlight colour bg */
+$contentbg: #fff; /* Content BG - Tabs (active state) */
+$subtext: #777; /* small, breadcrumbs etc */
+$text-color : #999;
+
+
+
+$brand-primarytext:#999;
+
+
+$font_heading : 'Josefin Sans', sans-serif;
+$font_text : 'PT Sans Narrow', sans-serif;

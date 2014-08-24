@@ -1,0 +1,7 @@
+<?php
+
+woocommerce_content();
+
+
+?>
+
