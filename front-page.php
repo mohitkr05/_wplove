@@ -97,12 +97,12 @@ query_posts( array ( 'post_type' => 'product' ,  'posts_per_page' => 6) );
 
 <div class="row">
 	<div class="col-md-12">
-           <h3 class="heading-sec">Latest Themes</h3>
+           <h3 class="heading-sec">Latest Posts</h3>
         </div>
 	</div>
 	<?php
 	global $post, $product;
-query_posts( array ( 'post_type' => 'post' ,  'posts_per_page' => 2) );
+query_posts( array ( 'post_type' => 'post' ,  'posts_per_page' => 3) );
 
 ?>  <?php if ( have_posts() ) : ?>
 <div class="row">

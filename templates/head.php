@@ -19,7 +19,7 @@
 	<?php // or, set /favicon.ico for IE10 win ?>
 <meta name="msapplication-TileColor" content="#f01d4f">
 <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png">
-
+<meta name="google-site-verification" content="WisCbmd4AtN8UNfVQaqnpeuczRamS5eVLpwbCpmDJhI" />
 
   <?php wp_head(); ?>
 
