@@ -58,7 +58,7 @@ global $woocommerce;
 
 	<p class="total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
-	<?php do_action( 'woocommerce_widget_shopping_cart_before_btn btn-primarys' ); ?>
+	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 	<p class="btn btn-primarys">
 		<a href="<?php echo WC()->cart->get_cart_url(); ?>" class="btn btn-primary wc-forward"><?php _e( 'View Cart', 'woocommerce' ); ?></a>

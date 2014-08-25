@@ -10,10 +10,10 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 
-<?php do_action( 'woocommerce_before_add_to_cart_btn btn-primary' ); ?>
+<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
 <p class="cart">
-	<a href="<?php echo esc_url( $product_url ); ?>" rel="nofollow" class="single_add_to_cart_btn btn-primary btn btn-primary alt"><?php echo $btn btn-primary_text; ?></a>
+	<a href="<?php echo esc_url( $product_url ); ?>" rel="nofollow" class="single_add_to_cart_button btn btn-primary alt"><?php echo $button; ?></a>
 </p>
 
-<?php do_action( 'woocommerce_after_add_to_cart_btn btn-primary' ); ?>
+<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
